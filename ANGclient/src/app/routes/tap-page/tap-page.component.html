@@ -1,0 +1,13 @@
+<!-- If there are scores -->
+<div *ngIf="allScores.length != 0; else scoreEmpty">
+    <ul>
+        <div *ngFor="let score of allScores">
+            <li>{{ score.score }}pts - {{ score.user_id.first_name }} {{ score.user_id.last_name }} / {{ score.date|date:'dd/MM/yyyy' }} - {{ score.date|date:'H:m:s' }}</li>
+        </div>
+    </ul>
+</div>
+
+<!-- If score empty -->
+<ng-template #scoreEmpty>
+    <p>Pour avoir des scores, il faut jouer ;-)</p>
+</ng-template>

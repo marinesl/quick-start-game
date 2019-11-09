@@ -1,0 +1,19 @@
+<section class="maxWidth">
+  <!-- Not Connected -->
+  <div *ngIf="!isConnected">
+    <h1>Welcome on Tapboard</h1>
+    <p>Login or register to start tapping</p>
+  </div>
+
+  <!-- Connected -->
+  <div *ngIf="isConnected">
+    <h1>Hello {{ first_name }}</h1>
+    <nav>
+      <ul>
+        <li *ngIf="this.router.url === '/me'"><a [routerLink]="'/tap'">Scores</a></li>
+        <li *ngIf="this.router.url === '/tap'"><a [routerLink]="'/me'">Play</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>

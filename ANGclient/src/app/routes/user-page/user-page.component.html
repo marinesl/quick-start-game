@@ -1,0 +1,11 @@
+<!-- Button image -->
+<div (click)="tapOn()">
+	<img src="../../../assets/IMAGES/tap/tapOff.png" *ngIf="!tap" class="tapImg">
+	<img src="../../../assets/IMAGES/tap/tapOn.png" *ngIf="tap" class="tapImg">
+</div>
+
+<!-- Progress bar for game duration -->
+<div>
+	<progress id="timer" max="100" [value]="temps">{{ temps }}</progress>
+	<p>{{ temps/10 }}s</p>
+</div>
